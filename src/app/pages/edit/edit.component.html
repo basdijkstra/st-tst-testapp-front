@@ -1,0 +1,28 @@
+<article class="animate__animated animate__animated animate__fadeIn">
+  <h1>GET REST API data</h1>
+  <p>Deze pagina is bedoeld om POST (edit) calls te kunnen testen.</p>
+  <table id="data-presentation">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Country</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let userData of delaUserData$ | async">
+      <td>{{ userData.id }}</td>
+      <td>
+        <a routerLink="/edit/{{ userData.id }}" class="edit-link">{{
+          userData.name
+        }}</a>
+      </td>
+      <td>{{ userData.country }}</td>
+      <td class="icon-column">
+        <mat-icon
+          (click)="delete(userData.id)"
+          class="icon-button edit-delete-icon"
+          >delete_forever</mat-icon
+        >
+      </td>
+    </tr>
+  </table>
+</article>

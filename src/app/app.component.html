@@ -1,0 +1,22 @@
+<app-loader></app-loader>
+<div class="animate__animated animate__animated animate__fadeIn">
+  <header>
+    <img class="img-logo" src="../assets/img/logo.png" />
+  </header>
+
+  <section>
+    <nav>
+      <div class="btn-group">
+        <button class="button" [routerLink]="['start']">START</button>
+        <button class="button" [routerLink]="['list']">LIST</button>
+        <button class="button" [routerLink]="['new']">NEW</button>
+        <button class="button" [routerLink]="['edit']">EDIT</button>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </section>
+
+  <footer>
+    <p>Dela System team test applicatie voor DevOps developments</p>
+  </footer>
+</div>

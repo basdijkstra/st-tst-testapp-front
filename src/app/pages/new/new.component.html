@@ -1,0 +1,70 @@
+<article class="animate__animated animate__animated animate__fadeIn">
+  <h1>Add users to a system</h1>
+  <p>This page is used as a reference aplication .</p>
+  <form class="form" #userDataForm="ngForm" (ngSubmit)="onSubmit(userDataForm)">
+    <table class="width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="width" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              ngModel
+              name="name"
+              placeholder="name"
+              required
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="width" appearance="fill">
+            <mat-label>Address</mat-label>
+            <input
+              matInput
+              ngModel
+              name="address"
+              placeholder="address"
+              required
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="width" appearance="fill">
+            <mat-label>Country</mat-label>
+            <input
+              matInput
+              ngModel
+              name="country"
+              placeholder="country"
+              required
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+    <p>
+      <mat-form-field class="area-width" appearance="fill">
+        <mat-label>Information</mat-label>
+        <textarea
+          matInput
+          ngModel
+          name="information"
+          placeholder="information"
+        ></textarea>
+      </mat-form-field>
+    </p>
+    <button
+      mat-stroked-button
+      color="primary"
+      class="bol-button-solid bol-blue submit-btn-postion"
+      type="submit"
+      [disabled]="!userDataForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</article>

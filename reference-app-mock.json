@@ -1,0 +1,174 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "st-tst-testapp-api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/v1/DelaUser": {
+      "get": {
+        "tags": ["DelaUser"],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DelaUserModel"
+                },
+                "examples": {
+                  "valid": {
+                    "summary": "dela valid users",
+                    "value": [
+                      {
+                        "id": 100,
+                        "name": "Jimmy Jam",
+                        "address": "Jimmy address",
+                        "country": "Jam country",
+                        "information": "Jimmy Jam Valid information"
+                      },
+                      {
+                        "id": 101,
+                        "name": "sjors Stroop",
+                        "address": "sjors address",
+                        "country": "Stroop country",
+                        "information": "sjors Stroop Valid information"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["DelaUser"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DelaUserModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DelaUserModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DelaUserModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/DelaUser/{id}": {
+      "get": {
+        "tags": ["DelaUser"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DelaUserModel"
+                },
+                "examples": {
+                  "valid": {
+                    "summary": "dela valid user",
+                    "value": {
+                      "id": 100,
+                      "name": "Valid name",
+                      "address": "Valid address",
+                      "country": "Valid country",
+                      "information": "Valid information"
+                    }
+                  },
+                  "valid2": {
+                    "summary": "dela valid2 user",
+                    "value": {
+                      "id": 102,
+                      "name": "Valid2 name",
+                      "address": "Valid2 address",
+                      "country": "Valid2 country",
+                      "information": "Valid2 information"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/DelaUser/delete/{id}": {
+      "get": {
+        "tags": ["DelaUser"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DelaUserModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "information": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}

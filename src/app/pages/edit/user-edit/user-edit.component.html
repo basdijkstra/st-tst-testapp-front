@@ -1,0 +1,90 @@
+<article class="animate__animated animate__animated animate__fadeIn">
+  <h1>POST data to API</h1>
+  <p>Deze pagina is bedoeld om POST calls te kunnen testen.</p>
+  <form
+    class="form"
+    #userDataForm="ngForm"
+    (ngSubmit)="onSubmit(userDataForm)"
+    novalidate
+  >
+    <table class="width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="width" appearance="fill">
+            <mat-label>Id</mat-label>
+            <input
+              matInput
+              ngModel
+              name="id"
+              value="{{ (delaUser$ | async)?.id }}"
+              hidden
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="width" appearance="fill">
+            <mat-label>Volledige naam</mat-label>
+            <input
+              matInput
+              ngModel
+              name="name"
+              placeholder="Je naam"
+              value="{{ (delaUser$ | async)?.name }}"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="width" appearance="fill">
+            <mat-label>Adress</mat-label>
+            <input
+              matInput
+              ngModel
+              name="address"
+              placeholder="Straat en postcode"
+              value="{{ (delaUser$ | async)?.address }}"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="width" appearance="fill">
+            <mat-label>Land</mat-label>
+            <input
+              matInput
+              ngModel
+              name="country"
+              placeholder="Straat en postcode"
+              value="{{ (delaUser$ | async)?.country }}"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+    <p>
+      <mat-form-field class="area-width" appearance="fill">
+        <mat-label>Informatie</mat-label>
+        <textarea
+          matInput
+          ngModel
+          name="information"
+          placeholder="Beschrijving"
+          value="{{ (delaUser$ | async)?.information }}"
+        ></textarea>
+      </mat-form-field>
+    </p>
+    <button
+      mat-stroked-button
+      mat-stroked-button
+      color="primary"
+      class="bol-button-solid bol-blue submit-btn-postion"
+      type="submit"
+    >
+      Aanpassen
+    </button>
+  </form>
+</article>

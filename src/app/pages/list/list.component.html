@@ -1,0 +1,16 @@
+<article class="animate__animated animate__animated animate__fadeIn">
+  <h1>GET REST API data</h1>
+  <p>Deze pagina is bedoeld om GET calls te kunnen testen.</p>
+  <table id="data-presentation">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Country</th>
+    </tr>
+    <tr *ngFor="let userData of delaUserData$ | async">
+      <td>{{ userData.id }}</td>
+      <td>{{ userData.name }}</td>
+      <td>{{ userData.country }}</td>
+    </tr>
+  </table>
+</article>
