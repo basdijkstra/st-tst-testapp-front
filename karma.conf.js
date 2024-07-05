@@ -5,10 +5,9 @@ const path = require('path');
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular', 'pact'],
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
-      require('@pact-foundation/karma-pact'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-junit-reporter'),
@@ -43,15 +42,6 @@ module.exports = function (config) {
     reporters: ['progress'],
     browsers: ['Chrome'],
     restartOnFileChange: true,
-    pact: [
-      {
-        cors: true,
-        spec: 3,
-        port: 1234,
-        log: path.resolve(process.cwd(), 'logs', 'mockserver-integration.log'),
-        dir: path.resolve(process.cwd(), 'pacts')
-      }
-    ],
     proxies: {
       '/api': 'http://localhost:1234/api'
     }
