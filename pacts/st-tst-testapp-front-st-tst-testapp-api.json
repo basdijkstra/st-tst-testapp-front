@@ -1,0 +1,57 @@
+{
+  "consumer": {
+    "name": "st-tst-testapp-front"
+  },
+  "interactions": [
+    {
+      "description": "a request to GET a user",
+      "providerState": "user 100 exists",
+      "request": {
+        "method": "GET",
+        "path": "/api/v1/DelaUser/100"
+      },
+      "response": {
+        "body": {
+          "address": "Valid address",
+          "country": "Valid country",
+          "id": 100,
+          "information": "Valid information",
+          "name": "Valid name"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body.address": {
+            "match": "type"
+          },
+          "$.body.country": {
+            "match": "type"
+          },
+          "$.body.information": {
+            "match": "type"
+          },
+          "$.body.name": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "13.1.0"
+    },
+    "pactRust": {
+      "ffi": "0.4.21",
+      "models": "1.2.2"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "st-tst-testapp-api"
+  }
+}
